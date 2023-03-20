@@ -8,10 +8,10 @@ import java.nio.file.StandardOpenOption;
 
 public class FileCopySimpleExample {
     public static void main(String[] args) {
-        Path inputPath1 = Path.of("src/file_copy_example/input.txt");
+        Path inputPath = Path.of("src/file_copy_example/input.txt");
         Path outputPath = Path.of("src/file_copy_example/output.txt");
 
-        try (FileChannel inputChannel = FileChannel.open(inputPath1, StandardOpenOption.READ);
+        try (FileChannel inputChannel = FileChannel.open(inputPath, StandardOpenOption.READ);
              FileChannel outputChannel = FileChannel.open(outputPath, StandardOpenOption.CREATE, StandardOpenOption.WRITE)) {
 
             ByteBuffer buffer = ByteBuffer.allocate(1024);
